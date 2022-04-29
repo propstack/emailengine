@@ -4,6 +4,6 @@ services:
         build: .
         ports:
             # API and web interface
-            - '3001:3000'
+            - '3000:3000'
             # SMTP for message submission
             - '2525:2525'
