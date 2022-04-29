@@ -2223,7 +2223,7 @@ When making API calls remember that requests against the same account are queued
 
                     bcc: Joi.array().items(addressSchema).description('List of addresses').label('AddressList'),
 
-                    subject: Joi.string().max(1024).example('What a wonderful message').description('Message subject'),
+                    subject: Joi.string().allow('', null).default('').max(1024).example('What a wonderful message').description('Message subject'),
 
                     text: Joi.string().max(MAX_ATTACHMENT_SIZE).example('Hello from myself!').description('Message Text'),
 
@@ -2879,7 +2879,7 @@ When making API calls remember that requests against the same account are queued
                         )
                         .label('RFC822Raw'),
 
-                    subject: Joi.string().max(1024).example('What a wonderful message').description('Message subject'),
+                    subject: Joi.string().allow('', null).default('').max(1024).example('What a wonderful message').description('Message subject'),
 
                     text: Joi.string().max(MAX_ATTACHMENT_SIZE).example('Hello from myself!').description('Message Text'),
 
