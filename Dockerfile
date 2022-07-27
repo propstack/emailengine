@@ -1,14 +1,16 @@
-FROM node:lts-alpine
+FROM 728137396354.dkr.ecr.eu-west-1.amazonaws.com/s24-base-nodejs12
 
-RUN apk add --no-cache dumb-init
+ENV STACK_PATH=/emailengine
 
-WORKDIR /emailengine
+RUN yum install -y awscli jq && \
+    yum clean all && \
+    yum autoremove -y
+
+WORKDIR $STACK_PATH
 COPY . .
 
 RUN npm install --production
 
-ENV EENGINE_APPDIR=/emailengine
-ENV EENGINE_HOST=0.0.0.0
+EXPOSE 3000
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-CMD node ${EENGINE_APPDIR}/server.js
+CMD ["sh", "/emailengine/docker/start-service.sh"]
