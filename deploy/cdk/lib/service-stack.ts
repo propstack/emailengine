@@ -62,7 +62,7 @@ export class ServiceStack extends s24.Stack {
         const service = new s24.InfinityService(this, `EmailEngineInfinityService`, {
             serviceName: this.withStage(`email-engine`),
             containerPort: 3000,
-            healthCheckPath: '/health',
+            healthCheckPath: '/',
             image: s24.ContainerImage.fromEcrRepository(ecrRepository, props.imageTag),
             minCapacity: props.stage === 'pro' ? 2 : 1,
             cpu: 2048,
