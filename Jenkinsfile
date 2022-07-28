@@ -14,7 +14,7 @@ pipeline {
 
         ECR_REPOSITORY_NAME = 'email-engine-ecr'
 
-        PROJECT_NAME = 'propstack-email-engine'
+        PROJECT_NAME = 'propstack-emailengine'
 
         MAIN_BRANCH = 'propstack'
 //         MAIN_BRANCH = 'feature/propstack-aws'
