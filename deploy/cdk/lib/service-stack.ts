@@ -70,9 +70,7 @@ export class ServiceStack extends s24.Stack {
             unhealthyThresholdCount: 5,
             containerEnvironment: {
                 ENV_TYPE: props.stage,
-                NODE_OPTIONS: "--max-old-space-size=3584 --require /usr/lib/node_modules/dd-trace/init",
-                REQUEST_TIMEOUT: '12000',
-                THREAD_TIMEOUT: '300000'
+                NODE_OPTIONS: "--require /usr/lib/node_modules/dd-trace/init"
             },
             role: new s24.InfinityServiceRole(
                 this, `InfinityServiceRole`, {
