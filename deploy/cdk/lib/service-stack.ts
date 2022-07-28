@@ -60,7 +60,7 @@ export class ServiceStack extends s24.Stack {
         ecrRepository: ecr.IRepository,
     ) {
         const service = new s24.InfinityService(this, `EmailEngineInfinityService`, {
-            serviceName: this.withStage(`word`),
+            serviceName: this.withStage(`email-engine`),
             containerPort: 3000,
             healthCheckPath: '/health',
             image: s24.ContainerImage.fromEcrRepository(ecrRepository, props.imageTag),
