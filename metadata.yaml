@@ -1,6 +1,6 @@
 # https://docs.cloud.scout24.com/best-practices/metadata/
 type: application
-name: email-engine
+name: propstack-email-engine
 id: propstack-email-engine
 product: propstack
 vertical: is24
