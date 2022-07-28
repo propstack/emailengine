@@ -13,12 +13,15 @@ getSecretValueWithoutEnvPrefix() {
 }
 
 aws ssm get-parameters --names \
-            "${ENV_PREFIX}EENGINE_REDIS" \
+            "${ENV_PREFIX}EMAIL_ENGINE_REDIS_HOST" \
+            "${ENV_PREFIX}EMAIL_ENGINE_REDIS_PORT" \
         --region eu-west-1 --with-decryption > secrets.jsoon
 
-export EENGINE_REDIS=$(getSecretValue "EENGINE_REDIS")
+export EMAIL_ENGINE_REDIS_HOST=$(getSecretValue "EMAIL_ENGINE_REDIS_HOST")
+export EMAIL_ENGINE_REDIS_PORT=$(getSecretValue "EMAIL_ENGINE_REDIS_PORT")
 rm secrets.json
 
+export EENGINE_REDIS="redis://$EMAIL_ENGINE_REDIS_HOST:$EMAIL_ENGINE_REDIS_PORT/2"
 export ENVIRONMENT production
 export NODE_ENV	production
 
