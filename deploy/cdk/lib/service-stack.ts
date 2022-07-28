@@ -26,7 +26,7 @@ export class ServiceStack extends s24.Stack {
             // fetching secrets from Parameter Store
             new aws_iam.PolicyStatement({
                 effect: aws_iam.Effect.ALLOW,
-                actions: ['ssm:GetParameter'],
+                actions: ['ssm:GetParameters'],
                 resources: [`arn:aws:ssm:${props.env.region}:${props.env.account}:parameter/*`],
             })
         ];
