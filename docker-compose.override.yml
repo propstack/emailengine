@@ -1,16 +1,16 @@
 version: '3.7'
 services:
-#    emailengine:
-#        build: .
-#        environment:
-#            EENGINE_REDIS: 'redis://redis:6379/2'
-#            EENGINE_PORT: '3000'
-#            EENGINE_HOST: '0.0.0.0'
-#        ports:
-#            # API and web interface
-#            - '3000:3000'
-#            # SMTP for message submission
-#            - '2525:2525'
+    emailengine:
+        build: .
+        environment:
+            EENGINE_REDIS: 'redis://redis:6379/2'
+            EENGINE_PORT: '3000'
+            EENGINE_HOST: '0.0.0.0'
+        ports:
+            # API and web interface
+            - '3000:3000'
+            # SMTP for message submission
+            - '2525:2525'
 #            - '80:80'
 
     redis:
