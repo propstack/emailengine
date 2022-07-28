@@ -100,7 +100,33 @@ pipeline {
                     }
                 }
 
-//                 todo: pro
+                stage('Sync PRO confirmation') {
+                    when {
+                        beforeAgent true
+                        branch env.MAIN_BRANCH
+                    }
+
+                    steps {
+                        script {
+                            PRO_DEPLOYMENT = input(
+                                id: 'Proceed', message: 'Pro deployment', parameters: [
+                                [$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Select checkbox to accept production deployment']
+                            ])
+                        }
+                    }
+                }
+
+                stage('Sync PRO') {
+                    when {
+                        beforeAgent true
+                        branch env.MAIN_BRANCH
+                        expression { PRO_DEPLOYMENT.toBoolean() == true }
+                    }
+
+                    steps {
+                        cdk('pro')
+                    }
+                }
             }
         }
     }
