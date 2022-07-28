@@ -14,11 +14,18 @@ getSecretValueWithoutEnvPrefix() {
 
 #aws ssm get-parameters --names \
 #            "${ENV_PREFIX}EENGINE_REDIS" \
-#        --region eu-west-1 --with-decryption > secrets.json
+#        --region eu-west-1 --with-decryption > secrets.jsoon
 
 #todo: uncomment after tests
 #export EENGINE_REDIS=$(getSecretValue "EENGINE_REDIS")
 #rm secrets.json
+
+export ENVIRONMENT production
+export NODE_ENV	production
+
+#todo
+#export REDIS_DEFAULT_ADDRESS_EXT	3.70.181.188
+#export REDIS_DEFAULT_URL_EXT	redis://3.70.181.188:6379
 
 mv ./deploy/nginx.conf /etc/nginx/nginx.conf
 
