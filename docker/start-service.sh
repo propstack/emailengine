@@ -22,7 +22,6 @@ export EMAIL_ENGINE_REDIS_PORT=$(getSecretValue "EMAIL_ENGINE_REDIS_PORT")
 rm secrets.json
 
 export EENGINE_REDIS="rediss://$EMAIL_ENGINE_REDIS_HOST:$EMAIL_ENGINE_REDIS_PORT/2"
-#export EENGINE_REDIS="redis://redis:/2"
 export ENVIRONMENT="production"
 export NODE_ENV="production"
 
