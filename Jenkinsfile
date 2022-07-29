@@ -16,7 +16,8 @@ pipeline {
 
         PROJECT_NAME = 'propstack-emailengine'
 
-        MAIN_BRANCH = 'propstack'
+//         MAIN_BRANCH = 'propstack'
+        MAIN_BRANCH = 'feature/propstack-aws'
 
         GIT_COMMIT = """${sh(returnStdout: true, script: "git rev-parse HEAD").trim()}"""
 
@@ -63,13 +64,13 @@ pipeline {
                     }
                 }
 
-                stage('Static analysis') {
-                    agent { node { label "build-node14" } }
-
-                    steps {
-                        runSecurityCodeScan(gitHubRepo: "Scout24/${env.PROJECT_NAME}", languages: ['javascript'], rules: 'security-and-quality')
-                    }
-                }
+//                 stage('Static analysis') {
+//                     agent { node { label "build-node14" } }
+//
+//                     steps {
+//                         runSecurityCodeScan(gitHubRepo: "Scout24/${env.PROJECT_NAME}", languages: ['javascript'], rules: 'security-and-quality')
+//                     }
+//                 }
             }
         }
 

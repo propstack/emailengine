@@ -26,4 +26,4 @@ export ENVIRONMENT="production"
 export NODE_ENV="production"
 
 echo "Starting Email Engine application"
-node /emailengine/server.js | pino-pretty
+node /emailengine/server.js | tail
