@@ -23,8 +23,8 @@ rm secrets.json
 
 export EENGINE_REDIS="redis://$EMAIL_ENGINE_REDIS_HOST:$EMAIL_ENGINE_REDIS_PORT/2"
 #export EENGINE_REDIS="redis://redis:6379/2"
-export EENGINE_PORT='3000'
-export EENGINE_HOST='0.0.0.0'
+export EENGINE_PORT="3000"
+export EENGINE_HOST="0.0.0.0"
 export ENVIRONMENT="production"
 export NODE_ENV="production"
 
