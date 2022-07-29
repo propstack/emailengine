@@ -9,7 +9,8 @@ RUN yum install -y awscli jq && \
 WORKDIR $STACK_PATH
 COPY . .
 
-RUN npm install --production
+RUN npm install --production && \
+    npm install -g pino-pretty
 
 EXPOSE 3000
 

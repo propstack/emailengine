@@ -22,9 +22,9 @@ export EMAIL_ENGINE_REDIS_PORT=$(getSecretValue "EMAIL_ENGINE_REDIS_PORT")
 rm secrets.json
 
 export EENGINE_REDIS="rediss://$EMAIL_ENGINE_REDIS_HOST:$EMAIL_ENGINE_REDIS_PORT/2"
-echo "$EENGINE_REDIS"
+#export EENGINE_REDIS="redis://redis:/2"
 export ENVIRONMENT="production"
 export NODE_ENV="production"
 
 echo "Starting Email Engine application"
-node /emailengine/server.js
+node /emailengine/server.js | pino-pretty
