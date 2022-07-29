@@ -74,7 +74,7 @@ export class ServiceStack extends s24.Stack {
                 NODE_OPTIONS: "--require /usr/lib/node_modules/dd-trace/init",
                 EENGINE_PORT: "3000",
                 EENGINE_HOST: "0.0.0.0",
-                EENGINE_LOG_LEVEL: "info"
+                EENGINE_LOG_LEVEL: "debug"
             },
             role: new s24.InfinityServiceRole(
                 this, `InfinityServiceRole`, {
