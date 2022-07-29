@@ -64,13 +64,13 @@ pipeline {
                     }
                 }
 
-//                 stage('Static analysis') {
-//                     agent { node { label "build-node14" } }
-//
-//                     steps {
-//                         runSecurityCodeScan(gitHubRepo: "Scout24/${env.PROJECT_NAME}", languages: ['javascript'], rules: 'security-and-quality')
-//                     }
-//                 }
+                stage('Static analysis') {
+                    agent { node { label "build-node14" } }
+
+                    steps {
+                        runSecurityCodeScan(gitHubRepo: "Scout24/${env.PROJECT_NAME}", languages: ['javascript'], rules: 'security-and-quality')
+                    }
+                }
             }
         }
 
@@ -89,7 +89,7 @@ pipeline {
                     }
                 }
 
-                stage('Deploy stg') {
+                stage('Sync stg') {
                     when {
                         beforeAgent true
                         branch env.MAIN_BRANCH
