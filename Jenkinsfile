@@ -16,8 +16,7 @@ pipeline {
 
         PROJECT_NAME = 'propstack-emailengine'
 
-//         MAIN_BRANCH = 'propstack'
-        MAIN_BRANCH = 'feature/propstack-aws'
+        MAIN_BRANCH = 'propstack'
 
         GIT_COMMIT = """${sh(returnStdout: true, script: "git rev-parse HEAD").trim()}"""
 

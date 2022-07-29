@@ -27,3 +27,4 @@ export NODE_ENV="production"
 
 echo "Starting Email Engine application"
 node /emailengine/server.js | pino-pretty
+#todo: remove after fix log stream
