@@ -1,5 +1,6 @@
 import * as ecr from 'aws-cdk-lib/aws-ecr';
 import * as s24 from '@is24/s24-aws-cdk';
+import * as ssm from 'aws-cdk-lib/aws-ssm'
 import { aws_iam, CfnOutput, Fn, StackProps, Environment } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
@@ -95,5 +96,10 @@ export class ServiceStack extends s24.Stack {
             value: service.serviceName,
             description: 'Full Infinity service name'
         });
+
+        new ssm.StringParameter(this, `${props.stage}SSMEmailEngineServiceEndpoint`, {
+            parameterName: `${props.stage.toUpperCase()}_EMAIL_ENGINE_SERVICE_ENDPOINT`,
+            stringValue: service.dnsName ?? '',
+        })
     }
 }
