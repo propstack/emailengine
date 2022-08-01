@@ -26,5 +26,5 @@ export ENVIRONMENT="production"
 export NODE_ENV="production"
 
 echo "Starting Email Engine application"
-node /emailengine/server.js
+cd /emailengine && npm start
 #todo: remove after fix log stream
