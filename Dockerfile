@@ -2,7 +2,7 @@ FROM 728137396354.dkr.ecr.eu-west-1.amazonaws.com/s24-base-nodejs16
 
 ENV STACK_PATH=/emailengine
 
-RUN yum install -y awscli jq tee && \
+RUN yum install -y awscli jq coreutils && \
     yum clean all && \
     yum autoremove -y
 
