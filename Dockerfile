@@ -13,4 +13,4 @@ RUN npm install --production
 
 EXPOSE 3000
 
-CMD ["bash", "/emailengine/docker/start-service.sh"]
+CMD ["sh", "/emailengine/docker/start-service.sh"]
