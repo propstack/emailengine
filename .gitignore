@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-package-lock.json
+./package-lock.json
 .env
 dist/
 yarn.lock
@@ -9,3 +9,4 @@ static/licenses.html
 version-info.json
 ee-dist/
 config/development.toml
+.idea

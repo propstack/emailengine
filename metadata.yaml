@@ -1,0 +1,21 @@
+# https://docs.cloud.scout24.com/best-practices/metadata/
+type: application
+name: propstack-email-engine
+id: propstack-email-engine
+product: propstack
+vertical: is24
+exposure:
+  - consumer-facing-read
+  - consumer-facing-write
+criticality:
+  value: silver
+  timestamp: "2022-02-22T22:22:22+00:00"
+confidentiality: company-internal
+description: |
+  Propstack Email Engine
+owners:
+  - propstack-tech@scout24.com
+platform: aws
+lifecycle: development
+tags:
+  - propstack
