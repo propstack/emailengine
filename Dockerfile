@@ -2,6 +2,9 @@ FROM 728137396354.dkr.ecr.eu-west-1.amazonaws.com/s24-base-nodejs16
 
 ENV STACK_PATH=/emailengine
 
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN yum install -y awscli jq && \
     yum clean all && \
     yum autoremove -y
