@@ -104,10 +104,13 @@ export class ServiceStack extends s24.Stack {
             stringValue: service.dnsName ?? '',
         })
 
-        new ssm.StringParameter(this, `${props.stage}SSMAccentroEmailEngineServiceEndpoint`, {
-            parameterName: `ACCENTRO_EMAIL_ENGINE_SERVICE_ENDPOINT`,
-            stringValue: service.dnsName ?? '',
-        })
+
+        if (props.stage === 'pro') {
+            new ssm.StringParameter(this, `${props.stage}SSMAccentroEmailEngineServiceEndpoint`, {
+                parameterName: `ACCENTRO_EMAIL_ENGINE_SERVICE_ENDPOINT`,
+                stringValue: service.dnsName ?? '',
+            })
+        }
 
         // we used imap.propstack.de now for accentro and pro prefix
     }
